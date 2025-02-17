@@ -17,7 +17,7 @@ https://gravatar.com/gravatar
 2. Run `npm install` to install all the dependencies.
 3. Create a .env file and give it the following variables:
 
-- **CONNECTIONSTRING**: MongoDB URI,
+- **CONNECTIONSTRING**: your mongoDB URI,
 - **PORT**: viable port value,
 - **JWTSECRET**: provide your JSON Web Token secret.
 
