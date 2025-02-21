@@ -27,6 +27,8 @@ https://gravatar.com/gravatar
 
 https://fullstack-complex-app-js.onrender.com/
 
+**ATTENTION:** As it is on the free plan, render's services goes to sleep when there is no traffic every 15 min and there is a delay when trying to access it or you might need to reload it.
+
 ## APIs Documentation
 
 
