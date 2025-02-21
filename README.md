@@ -23,13 +23,61 @@ https://gravatar.com/gravatar
 
 4. Run `npm run watch` to start the server.
 
-## Deployment URL
+## Render Deployment URL
 
-coming soon!!!
+https://fullstack-complex-app-js.onrender.com/
 
 ## APIs Documentation
 
-coming soon!!!
+
+### Headers
+
+- **Key:** Content-Type, **Value:** application/json
+
+
+### User Login
+
+- **URL:** /api/login
+- **Method:** POST
+- **Request Body:** {"username": "string", "password": "string"}
+- **Response {JSON}:** {message: "Login successful", "token": "string"}
+
+
+### Create Post
+
+- **URL:** /api/create-post
+- **Method:** POST
+- **Request Body:** {"title":"string", "body": "string", "token": "string"}
+- **Response {JSON}:** {"message": "success", createdPost:{"title": "string", "body": "string"}}
+
+
+### Delete Post
+
+- **URL:** /api/post/:id
+- **Method:** DELETE
+- **Request Body:** {"token":"string"}
+- **Response {JSON}:** {"message": "success", deletedPostId:{"id": "string"}}
+
+
+### Get all Posts from Author
+
+- **URL:** /api/postsByAuthor/:username
+- **Method:** GET
+- **Request Body:** {"token":"string"}
+- **Response {JSON}:** [
+    {
+        "_id": "string",
+        "title": "tring",
+        "body": "string",
+        "createdDate": "date",
+        "author": {
+            "username": "string",
+            "avatar": "https://gravatar.com/avatar/dad434caccc90924bbb5ea2d127c1092?s=128"
+            },
+        "isVisitorOwner": boolean
+    }
+]
+
 
 ### Special thanks to Mr. Brad Schiff
 
