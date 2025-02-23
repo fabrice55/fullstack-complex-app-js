@@ -2,7 +2,7 @@ const Post = require('../models/Post')
 const { Resend } = require('resend')
 
 
-
+const resend = new Resend(process.env.RESENDAPIKEY)
 
 exports.viewCreateScreen = function(req, res) {
     res.render('create-post')
@@ -12,14 +12,17 @@ exports.create = function(req, res) {
     let post = new Post(req.body, req.session.user._id)
     post.create().then(async function(newId) {
         
-        const resend = new Resend(process.env.RESENDAPIKEY)
-        const response = await resend.emails.send({
-            from: 'onboarding@resend.com',
-            to: 'bafshima12@gmail.com',
+        
+        const {data, error} = await resend.emails.send({
+            from: 'Complex-app <onboarding@resend.dev>',
+            to: process.env.TO_EMAIL,
             subject:'Congrats on Creating a New Post!',
             html:'You did a <strong>great</strong> job of creating a post.'
         })
-        console.log(response)
+        if (error){
+            return console.error({error})
+        }
+        console.log({data})
         req.flash("success", "New post successfully created.")
         req.session.save(() => res.redirect(`/post/${newId}`))
     }).catch(function(errors) {
