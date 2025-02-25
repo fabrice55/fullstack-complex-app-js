@@ -17,9 +17,11 @@ https://gravatar.com/gravatar
 2. Run `npm install` to install all the dependencies.
 3. Create a .env file and give it the following variables:
 
-- **CONNECTIONSTRING**: your mongoDB URI,
-- **PORT**: viable port value,
-- **JWTSECRET**: provide your JSON Web Token secret.
+- **CONNECTIONSTRING:** your mongoDB URI,
+- **PORT:** viable port value,
+- **JWTSECRET:** provide your JSON Web Token secret,
+- **RESENDAPIKEY:** API key for the Resend email service,
+- **TO_EMAIL:** the email you signed up with https://resend.com
 
 4. Run `npm run watch` to start the server.
 
